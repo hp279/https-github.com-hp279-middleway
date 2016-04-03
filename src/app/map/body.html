@@ -1,0 +1,54 @@
+<div class="container">
+  <h1 class="text-center">Meeting place service</h1>
+  <br>
+  <div class="row" style="padding-bottom: 20px">
+    <div class="col-sm-8">
+      <form class="form-inline" role="form">
+        <div class="form-group">
+          <label for="person_1_location">Person 1 Location:</label>
+          <input type="text" class="form-control" id="person_1_location"
+                 data-ng-model="ctrl.location1">
+          <button type="submit" class="btn btn-default"
+                  data-ng-click="ctrl.find1();"
+                  data-ng-disabled="!ctrl.find1Enabled()">
+            <span class="glyphicon glyphicon-search"/>
+          </button>
+          <button type="submit" class="btn btn-danger"
+                  data-ng-click="ctrl.clear1();">
+            <span class="glyphicon glyphicon-remove"/>
+          </button>
+          <button type="submit" class="btn btn-default">Special Preference</button>
+        </div>
+        <br>
+        <br>
+        <div class="form-group">
+          <label for="person_2_location">Person 2 Location:</label>
+          <input type="text" class="form-control" id="person_2_location"
+                 data-ng-model="ctrl.location2">
+          <button type="submit" class="btn btn-default"
+                  data-ng-click="ctrl.find2();"
+                  data-ng-disabled="!ctrl.find2Enabled()">
+            <span class="glyphicon glyphicon-search"/>
+          </button>
+          <button type="submit" class="btn btn-danger"
+                  data-ng-click="ctrl.clear2();">
+            <span class="glyphicon glyphicon-remove"/>
+          </button>
+          <button type="submit" class="btn btn-default">Special Preference</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-4">
+      <button type="submit" class="btn btn-primary"
+              data-ng-disabled="!ctrl.drawMiddleWayEnabled()"
+              data-ng-click="ctrl.drawMiddleWay()">Show Middle Place
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+      <div id="map" style="width: 100%; height: 600px"></div>
+    </div>
+  </div>
+</div>
